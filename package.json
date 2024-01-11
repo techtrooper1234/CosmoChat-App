@@ -1,0 +1,24 @@
+{
+  "name": "chat-app-backend",
+  "version": "1.0.0",
+  "description": "COSMOCHAT UI BACKEND",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js"
+    "server": "nodemon src/server.js"
+  },
+  "author": "Austyyn Powers for Tech Troopers",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.4",
+    "openai": "^4.24.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
