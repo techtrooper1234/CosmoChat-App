@@ -4,9 +4,10 @@
   "description": "COSMOCHAT UI BACKEND",
   "main": "server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "server": "nodemon src/server.js",
-    "client": "npm start --prefix chat-app-frontend"
+    "start": "node chat-app-backend/server.js",
+    "server": "nodemon chat-app-backend/server.js",
+    "client": "npm start --prefix chat-app-frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Austyyn Powers for Tech Troopers",
   "license": "MIT",
@@ -23,6 +24,7 @@
     "openai": "^4.24.1"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "nodemon": "^3.0.2"
   }
 }

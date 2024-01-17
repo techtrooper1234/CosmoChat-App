@@ -4,12 +4,19 @@ import React from 'react';
   import App from './App';
   import { BrowserRouter } from 'react-router-dom';
   import { ChatProvider } from './context/ChatContext';
+  import { store } from './app/store';
+  import { Provider } from 'react-redux';
   
- ReactDOM.render(
-  <ChatProvider>
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+    <ChatProvider>
    <BrowserRouter>
-     <App />
-   </BrowserRouter>,
+      <App />
+      </BrowserRouter>,
    </ChatProvider>,
-   document.getElementById('root')
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
   );
