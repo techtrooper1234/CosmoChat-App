@@ -135,28 +135,51 @@ flex-direction: column;
 flex-direction: column;
 }
 
-
-
-.goals {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.goal {
-  background-color: #f4f4f4;
-  margin: 10px 0;
-  padding: 20px 0 10px;
-  position: relative;
-}
-
-.goal .close {
+.chatsummary-container {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  border: none;
-  background: none;
+  margin-right: 200px;
+  width: 120px;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid gray;
+  background-color: aliceblue;
+}
+
+/* Chat Styling */
+.chat-bot-container {
+  position: relative;
+  background-color: aliceblue;
+  width: 700px;
+  height: fit-content;
+}
+
+.chat-messages {
+  font-family: "Rubik" !important;
+  margin: 20px;
+  padding: 20px;
+  text-align: left;
+  
+}
+
+.message.bot {
+  background-color: rgb(231, 221, 221);
+  margin-right: 400px;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+.message.user {
+  color: #fff;
+  margin-left: 80px;
+  background-color: blueviolet;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.chat-input {
+  width: 100%;
 }
 
 .form,

@@ -33,7 +33,7 @@
       </li>
 
       <li>
-      <Link to="/">
+      <Link to="#">
         <img 
         onClick={()=>setOpenSetting(!openSetting)}
         src={Setting_Icon} alt="Setting_Ic" 

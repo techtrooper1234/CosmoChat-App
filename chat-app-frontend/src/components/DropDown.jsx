@@ -50,8 +50,9 @@ function DropDown() {
                     <li>EndChat</li>
                     <li>ClearChat</li>
                     {
-        openSetting && <DropDown />
-      }
+                      openSetting && <DropDown />
+                    }
+      
                 </ul>
         </div>
         
