@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Rex_Welcome_Image from '../../assets/Rex_Welcome_Image.png';
+import Rex_Welcome_Image from '../assets/Rex_Welcome_Image.png';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useSelector} from 'react-redux';

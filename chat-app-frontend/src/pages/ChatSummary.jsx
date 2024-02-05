@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import { UseSelector, useDispatch } from 'react-redux';
-import Chat from './Chat'
-import Rex_Logo_WT from '../../assets/Rex_Logo_WT.png';
+import Chat from '../pages/Chat'
+import Rex_Logo_WT from '../assets/Rex_Logo_WT.png';
 import { Link } from 'react-router-dom';
 
 

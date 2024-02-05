@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
-import { ChatContext } from '../../context/ChatContext';
 import { useDispatch, useSelector } from 'react-redux';
-import {createChat} from '../../features/chats/chatSlice';
+import {createChat} from '../../src/services/chats/chatSlice';
   
   const Chat = () => {
   const [messages, setMessages] = useState([]);

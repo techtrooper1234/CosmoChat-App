@@ -2,8 +2,8 @@
   import { Routes, Route } from 'react-router-dom';
   import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-  import Home from './components/Home/Home';
-  import Chat from './components/Chat/Chat';
+  import Home from './pages/Home';
+  import Chat from './pages/Chat';
   import ChatSummary from './pages/ChatSummary';
   import Navigation from './components/Navigation';
   import Login from './pages/Login'

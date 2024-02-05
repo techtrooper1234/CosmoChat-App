@@ -1,10 +1,11 @@
   import React from 'react';
   import { useState } from "react";
   import { Link } from 'react-router-dom';
-  import Rex_Logo from '../../assets/Rex_Logo.png';
-  import Activity_Icon from '../../assets/Activity_Icon.svg';
-  import Setting_Icon from '../../assets/Setting_Icon.svg';
-  import DropDown from '../Dropdown/DropDown';
+  import Rex_Logo from '../assets/Rex_Logo.png'
+  import Activity_Icon from '../assets/Activity_Icon.svg'
+  import Setting_Icon from '../assets/Setting_Icon.svg'
+  import DropDown from '../components/DropDown'
+
 
   
  const Navigation = () => {
