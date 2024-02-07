@@ -17,7 +17,6 @@ npx create-react-app and npm init
 Use npm run dev 
 To run both the server and the UI cocurrently
 
-# Create a .env and add your MONGO_URI
 ```
 
 ## Contributing
