@@ -229,6 +229,28 @@ flex-direction: column;
   margin-right: 8px;
 }
 
+.csheading {
+  display: grid;
+  margin-right: 800px;
+}
+
+.csheading2 {
+  display: grid;
+  margin-right: 800px;
+  margin-top: 300px;
+}
+
+.ind-chats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.chatsummary-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .btn-reverse {
   background: #fff;
   color: #000;

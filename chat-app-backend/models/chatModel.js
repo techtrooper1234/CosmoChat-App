@@ -7,16 +7,9 @@ const chatSchema = mongoose.Schema(
       required: true,
       ref: 'User'
     },
-    message: {
-      type: String,
-      trim: true,
-    },
-    chat: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Chat",
-    },
     text: {
       type: String,
+      required: [true, 'Please add a text value'],
     },
   }, 
   {

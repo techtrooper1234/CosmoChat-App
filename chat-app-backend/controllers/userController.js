@@ -15,7 +15,7 @@ const registerUser = asyncHandler(async(req, res) => {
   }
 
   // Check if user exist
-  const userExists = await User.findOne({email})
+  const userExists = await User.findOne({ email })
 
   if(userExists) {
     res.status(400)

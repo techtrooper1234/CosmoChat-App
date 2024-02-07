@@ -1,14 +1,14 @@
-const asyncHandler = require('express-async-handler')
+const asyncHandler = require('express-async-handler');
 
-const Chat = require('../models/chatModel')
-const User = require('../models/userModel')
-
+const Chat = require('../models/chatModel');
+const User = require('../models/userModel');
 
 // @desc Get chats
 // @route GET /api/chats
 // @access Private
 const getChats = asyncHandler(async (req, res) => {
-  const chats = await Chat.find({ user: req.user.id})
+  const chats = await Chat.find({ user: req.user.id })
+
   res.status(200).json(chats)
 })
 
@@ -16,9 +16,9 @@ const getChats = asyncHandler(async (req, res) => {
 // @route POST /api/chats
 // @access Private
 const setChat = asyncHandler(async (req, res) => {
-  if(!req.body.input)  {
+  if(!req.body.text)  {
     res.status(400)
-    throw new Error('Please add a valid field')
+    throw new Error('Please add a text field')
   }
 
   const chat = await Chat.create({
@@ -84,7 +84,7 @@ const deleteChat = asyncHandler(async (req, res) => {
     throw new Error('User not authorized')
   }
 
-  await chat.deleteOne()
+  await chat.remove()
 
   res.status(200).json({ id: req.params.id })
 })

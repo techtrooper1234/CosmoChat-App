@@ -1,35 +1,40 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {createChat} from '../../src/services/chats/chatSlice';
+import {createChat, getChats} from '../services/chats/chatSlice';
+import Spinner from '../components/Spinner'
+
   
-  const Chat = () => {
+  const Chatwindow = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [text, setText] = useState('');
+  const { user } = useSelector((state) => state.auth)
+  const {chats, isLoading, isError, message} = useSelector((state) => state.chats)
 
   // Using useDispatch to dispatch message state
   const dispatch = useDispatch()
 
   const handleUserInput = (e) => {
-    setInput(e.target.value);
+    setText(e.target.value);
     
   };
 
   const handleSendMessage = (e) => {
     e.preventDefault();
     
-    if (input.trim() === '') return;
+    if (text.trim() === '') return;
     dispatch(createChat({ text, input }))
     setText('')
     setInput('')
     
+    
 
     setMessages((prevMessages) => [
       ...prevMessages,
-      { text: input, type: 'user' },
+      { text: text, type: 'user' }
     ]);
-    setInput('');
+    setText('');
 
     
 
@@ -45,15 +50,25 @@ import {createChat} from '../../src/services/chats/chatSlice';
 
     setMessages((prevMessages) => [...prevMessages, botResponse, botResponse2]);
   }, []);
+
+  useEffect(() => {
+    
+    dispatch(getChats())
+  }, [user, dispatch]);
+
+  if(isLoading) {
+    return <Spinner />
+  }
   
 
   return (
     <div className="chat-bot-container">
       <div className="chat-messages">
-        {messages.map((message, index) => (
+       {messages.map((message,  index) => (
           <div
             key={index}
             className={`message ${message.type === 'bot' ? 'bot' : 'user'}`}
+            
           >
             {message.text}
           </div>
@@ -63,7 +78,8 @@ import {createChat} from '../../src/services/chats/chatSlice';
         <input
           type="text"
           placeholder="Type a message to ReX..."
-          value={input}
+          value={text}
+          name='text'
           onChange={handleUserInput}
         />
         <button onClick={handleSendMessage}>Send</button>
@@ -73,4 +89,4 @@ import {createChat} from '../../src/services/chats/chatSlice';
 };
 
 
- export default Chat;
+ export default Chatwindow;

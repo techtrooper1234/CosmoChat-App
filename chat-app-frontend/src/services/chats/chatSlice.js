@@ -8,7 +8,7 @@ const initialState = {
     isError: false,
     isSuccess: false,
     isLoading: false,
-    message: ''
+    message: '',
 }
 
 // Create New Chat
@@ -26,6 +26,23 @@ export const createChat = createAsyncThunk('chats/create', async (chatData, thun
         return thunkAPI.rejectWithValue(message)
     }
 })
+
+// Get user Chats
+export const getChats = createAsyncThunk('chats/getAll', async (_, thunkAPI) => {
+  try {
+    const token = thunkAPI.getState().auth.user.token
+    return await chatService.getChats(token)
+  } catch (error) {
+    const message = 
+        (error.response && 
+        error.response.data && 
+        error.response.data.message) || 
+        error.message || 
+        error.toString()
+        return thunkAPI.rejectWithValue(message)
+  }
+})
+
 
 
 export const chatSlice = createSlice({
@@ -48,6 +65,19 @@ export const chatSlice = createSlice({
             state.isLoading = false
             state.isError = true
             state.message = action.payload
+          })
+          .addCase(getChats.pending, (state) => {
+            state.isLoading = true
+          })
+          .addCase(getChats.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.isSuccess = true
+            state.chats = action.payload
+          })
+          .addCase(getChats.rejected, (state, action) => {
+              state.isLoading = false
+              state.isError = true
+              state.message = action.payload
           })
     }
 })

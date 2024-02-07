@@ -26,7 +26,7 @@
       <ul>
 
       <li>
-      <Link to="/">
+      <Link to="/chatsummary">
         <img src={Activity_Icon} alt="Activity_Ic" 
         style={{ width: '28px',
         height: '28px', margin: '0 15px'}}/>
