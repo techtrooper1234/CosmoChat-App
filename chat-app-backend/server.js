@@ -24,8 +24,18 @@ const openai = new OpenAiApi(config);
 // set up server
 const app = express()
 
+app.use(cors(
+    {
+        origin: ["https://cosmo-chat-app.vercel.app/"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+
+mongoose.connect('mongodb+srv://techtroopers:techtroopers123@techtrooperscluster.wbv9mtt.mongodb.net/chatappdb?retryWrites=true&w=majority');
 
 app.use('/api/chats', require('./routes/chatRoutes'))
 app.use('/api/users', require('./routes/userRoutes'))
