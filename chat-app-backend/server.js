@@ -24,6 +24,8 @@ const openai = new OpenAiApi(config);
 // set up server
 const app = express()
 
+mongoose.connect('mongodb+srv://techtroopers:techtroopers123@techtrooperscluster.wbv9mtt.mongodb.net/chatappdb?retryWrites=true&w=majority');
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
