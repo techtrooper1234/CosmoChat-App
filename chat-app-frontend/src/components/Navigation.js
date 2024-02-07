@@ -1,10 +1,11 @@
   import React from 'react';
   import { useState } from "react";
   import { Link } from 'react-router-dom';
-  import Rex_Logo from '../../assets/Rex_Logo.png';
-  import Activity_Icon from '../../assets/Activity_Icon.svg';
-  import Setting_Icon from '../../assets/Setting_Icon.svg';
-  import DropDown from '../Dropdown/DropDown';
+  import Rex_Logo from '../assets/Rex_Logo.png'
+  import Activity_Icon from '../assets/Activity_Icon.svg'
+  import Setting_Icon from '../assets/Setting_Icon.svg'
+  import DropDown from '../components/DropDown'
+
 
   
  const Navigation = () => {
@@ -25,7 +26,7 @@
       <ul>
 
       <li>
-      <Link to="/">
+      <Link to="/chatsummary">
         <img src={Activity_Icon} alt="Activity_Ic" 
         style={{ width: '28px',
         height: '28px', margin: '0 15px'}}/>
@@ -33,7 +34,7 @@
       </li>
 
       <li>
-      <Link to="/">
+      <Link to="#">
         <img 
         onClick={()=>setOpenSetting(!openSetting)}
         src={Setting_Icon} alt="Setting_Ic" 

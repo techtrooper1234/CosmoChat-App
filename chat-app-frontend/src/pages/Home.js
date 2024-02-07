@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Rex_Welcome_Image from '../../assets/Rex_Welcome_Image.png';
+import Rex_Welcome_Image from '../assets/Rex_Welcome_Image.png';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {useSelector} from 'react-redux';
   
 // BEM -> Block Element Modifier
 
  const Home = () => {
+  const navigate = useNavigate()
+
+  const {user} = useSelector((state) => state.auth)
+
+  useEffect(() => {
+    if(!user) {
+      navigate('/login')
+    }
+  }, [user, navigate])
 
   const StartChatBtn = {
     margin: "1rem",
@@ -30,10 +42,10 @@ import Rex_Welcome_Image from '../../assets/Rex_Welcome_Image.png';
         style={{ alignSelf: "center" }}
         />
       </div>
-       <h1>Welcome to ReX Chat!</h1>
+       <h1>Welcome, {user && user.name}! &#128075;</h1>
        <h2>Receive Career Help from ReX!</h2>
       <h4>Start a conversation with ReX right now!</h4>
-       <Link style={StartChatBtn} to="/chat">Start Chat with ReX</Link>
+       <Link style={StartChatBtn}  to="/chat">Start Chat with ReX</Link>
        </div>
 
    );

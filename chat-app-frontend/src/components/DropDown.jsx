@@ -1,10 +1,9 @@
-//import React from "react";
 import { useState } from "react";
 import {FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
-import Setting_Icon from '../../assets/Setting_Icon.svg';
+import Setting_Icon from '../assets/Setting_Icon.svg'
 import { useDispatch, useSelector } from "react-redux";
-import {logout, reset} from '../../features/auth/authSlice'
+import {logout, reset} from '../../src/services/auth/authSlice'
 
 
 
@@ -50,8 +49,9 @@ function DropDown() {
                     <li>EndChat</li>
                     <li>ClearChat</li>
                     {
-        openSetting && <DropDown />
-      }
+                      openSetting && <DropDown />
+                    }
+      
                 </ul>
         </div>
         
