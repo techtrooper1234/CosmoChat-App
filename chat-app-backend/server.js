@@ -26,7 +26,7 @@ const app = express()
 
 app.use(cors(
     {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
+        origin: ["https://cosmo-chat-app.vercel.app/"],
         methods: ["POST", "GET"],
         credentials: true
     }
