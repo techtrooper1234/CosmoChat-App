@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
-import {FaSignInAlt} from 'react-icons/fa'
+import { FaSignInAlt, FaUser } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import {login, reset} from '../services/auth/authSlice'
 import Spinner from "../components/Spinner";
+import {Link} from 'react-router-dom';
 
 
 
@@ -100,6 +101,13 @@ function Login() {
               </button>
             </div>
         </form>
+    </section>
+
+    <section className="heading2">
+    <Link to='/register'>
+            <FaUser /> Register
+            <p>Don't have an Account? Then click me to Register</p>
+          </Link>
     </section>
     </>
     

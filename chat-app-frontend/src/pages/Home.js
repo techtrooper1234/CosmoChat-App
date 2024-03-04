@@ -19,18 +19,17 @@ import {useSelector} from 'react-redux';
   }, [user, navigate])
 
   const StartChatBtn = {
-    margin: "1rem",
+    //margin: "1rem",
     textDecoration: "none",
     color: 'white',
     background: 'blueviolet',
     paddingTop: '5px',
     paddingBottom: '10px',
-    paddingLeft: '80px',
-    paddingRight: '80px',
-    borderRadius: '60px',
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    borderRadius: '20px',
     fontSize: '20px',
     shadow: '4px'
-  
   };
 
    return (

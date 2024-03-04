@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {createChat, getChats} from '../services/chats/chatSlice';
-import Spinner from '../components/Spinner'
+import Spinner from '../components/Spinner';
+import Send_Icon from '../assets/Send_Icon.svg';
+import Rex_Logo_WT from '../assets/Rex_Logo_WT.png';
+
 
   
   const Chatwindow = () => {
@@ -63,6 +66,10 @@ import Spinner from '../components/Spinner'
 
   return (
     <div className="chat-bot-container">
+      <img src={Rex_Logo_WT} alt="Rex Logo WT" 
+        style={{ width: '80px',
+        height: '85px',  marginLeft: '40px', display: 'flex', alignContent: 'flex-start' }}
+        />
       <div className="chat-messages">
        {messages.map((message,  index) => (
           <div
@@ -75,14 +82,17 @@ import Spinner from '../components/Spinner'
         ))}
       </div>
       <div className="chat-input">
-        <input
+        <input className="input-box"
           type="text"
           placeholder="Type a message to ReX..."
           value={text}
           name='text'
           onChange={handleUserInput}
         />
-        <button onClick={handleSendMessage}>Send</button>
+        <button onClick={handleSendMessage} className="sendbtn"><img src={Send_Icon} alt="Send" 
+        style={{ width: '38px',
+        height: '28px', }}
+        /></button>
       </div>
     </div>
   );

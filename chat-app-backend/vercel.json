@@ -1,5 +1,5 @@
 {
-    "version":2,
+  "version":2,
     "builds": [
       { "src": "*.js", "use": "@vercel/node" }
     ],
@@ -9,8 +9,4 @@
           "dest": "/"
         }
     ]
-<<<<<<< HEAD
   }
-=======
-  }
->>>>>>> 48174383cd11cba5b77e816abcd5bb5b91bd8f58

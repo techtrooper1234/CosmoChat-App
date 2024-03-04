@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import Rex_Logo_WT from '../assets/Rex_Logo_WT.png';
 import { Link, useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import { getChats } from '../services/chats/chatSlice';
@@ -38,22 +37,21 @@ function ChatSummary () {
             <h5>Active Chat</h5> 
           </Link>
           <section className="chatsummary-container">
-        <img src={Rex_Logo_WT} alt="Rex Logo WT" 
-        style={{ width: '58px',
-        height: '48px',  marginRight: '400px', display: 'grid'}}
-        /> {chats.length > 0 ? (
+          {chats.length > 0 ? (
           <div className="ind-chats">
             {chats.map((chat) => (
               <ChatItem key={chat._id} chat={chat}/>
             ))}
           </div>
-        ) : (<h3>You don't have any Active Chats</h3>) }
+        ) : (<h3>Active Chats Appear Here</h3>) }
       </section>
         
           <Link to='' className="csheading2">
           <h5>Ended Chat</h5>  
           </Link>
-          <h3>You don't have any Ended Chats</h3>
+          <section className="chatsummary-container">
+          <h3>Ended Chats Appear Here</h3>
+          </section>
       
       
       </>

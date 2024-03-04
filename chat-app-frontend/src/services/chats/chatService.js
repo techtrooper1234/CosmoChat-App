@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = '/api/chats/'
+const API_URL = 'https://chat-app-backend-fawn.vercel.app/api/chats/'
 
 // Create new chat
 const createChat = async (chatData, token) => {
